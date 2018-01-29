@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:behaviors="clr-namespace:EmployeeChallenge.Xam.UI.Behaviors;assembly=EmployeeChallenge.Xam"
+             x:Class="EmployeeChallenge.Xam.Views.EditEmployeePage"
+             Title="{Binding Title}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="Update" Order="Default" Priority="0" Command="{Binding UpdateEmployeeCommand}"/>
+    </ContentPage.ToolbarItems>
+    <ScrollView>
+        <StackLayout Padding="10,10,10,0">
+            <Frame Padding="10,10,10,10" CornerRadius="10">
+                <StackLayout Spacing="2">
+                    <Label Text="First Name" 
+                           FontSize="Small"
+                           VerticalTextAlignment="End"/>
+                    <Entry Text="{Binding Employee.FirstName.Value, Mode=TwoWay}" 
+                       Style="{StaticResource EntryStyle}" Placeholder="Enter First Name" PlaceholderColor="#757575">
+                        <Entry.Behaviors>
+                            <behaviors:EventToCommandBehavior EventName="TextChanged" Command="{Binding ValidateFirstNameCommand}"/>
+                        </Entry.Behaviors>
+                        <Entry.Triggers>
+                            <DataTrigger TargetType="Entry"
+							Binding="{Binding Employee.FirstName.IsValid}"
+							Value="False">
+                                <Setter Property="behaviors:LineColorBehavior.LineColor" 
+                                    Value="{StaticResource ErrorColor}"/>
+                            </DataTrigger>
+                        </Entry.Triggers>
+                    </Entry>
+                    <Label
+					Text="{Binding Employee.FirstName.Errors, Converter={StaticResource FirstValidationErrorConverter}"
+					Style="{StaticResource ValidationErrorLabelStyle}" />
+                </StackLayout>
+            </Frame>
+            <Frame Padding="10,10,10,10">
+                <StackLayout Spacing="2">
+                    <Label Text="Last Name" 
+                           FontSize="Small"
+                           VerticalTextAlignment="End"/>
+                    <Entry Text="{Binding Employee.LastName.Value, Mode=TwoWay}" 
+                       Style="{StaticResource EntryStyle}" Placeholder="Enter Last Name" PlaceholderColor="#757575">
+                        <Entry.Behaviors>
+                            <behaviors:EventToCommandBehavior EventName="TextChanged" Command="{Binding ValidateLastNameCommand}"/>
+                        </Entry.Behaviors>
+                        <Entry.Triggers>
+                            <DataTrigger TargetType="Entry"
+							Binding="{Binding Employee.LastName.IsValid}"
+							Value="False">
+                                <Setter Property="behaviors:LineColorBehavior.LineColor" 
+                                    Value="{StaticResource ErrorColor}"/>
+                            </DataTrigger>
+                        </Entry.Triggers>
+                    </Entry>
+                    <Label
+					Text="{Binding Employee.LastName.Errors, Converter={StaticResource FirstValidationErrorConverter}"
+					Style="{StaticResource ValidationErrorLabelStyle}" />
+                </StackLayout>
+            </Frame>
+            <Frame Padding="10,10,10,10">
+                <StackLayout Spacing="2">
+                    <Label Text="Email" 
+                           FontSize="Small"
+                           VerticalTextAlignment="End"/>
+                    <Entry Text="{Binding Employee.Email.Value, Mode=TwoWay}" 
+                       Style="{StaticResource EntryStyle}" Placeholder="Enter Email" 
+                       PlaceholderColor="#757575" Keyboard="Email">
+                        <Entry.Behaviors>
+                            <behaviors:EventToCommandBehavior EventName="TextChanged" Command="{Binding ValidateEmailCommand}"/>
+                        </Entry.Behaviors>
+                        <Entry.Triggers>
+                            <DataTrigger TargetType="Entry"
+							Binding="{Binding Employee.Email.IsValid}"
+							Value="False">
+                                <Setter Property="behaviors:LineColorBehavior.LineColor" 
+                                    Value="{StaticResource ErrorColor}"/>
+                            </DataTrigger>
+                        </Entry.Triggers>
+                    </Entry>
+                    <Label
+					Text="{Binding Employee.Email.Errors, Converter={StaticResource FirstValidationErrorConverter}"
+					Style="{StaticResource ValidationErrorLabelStyle}" />
+                </StackLayout>
+            </Frame>
+            <Frame Padding="10,10,10,10">
+                <StackLayout Spacing="2">
+                    <Label Text="Address Line" 
+                           FontSize="Small"
+                           VerticalTextAlignment="End"/>
+                    <Entry Text="{Binding Employee.AddressLine.Value, Mode=TwoWay}" 
+                       Style="{StaticResource EntryStyle}" Placeholder="Enter Address Line" 
+                       PlaceholderColor="#757575">
+                        <Entry.Behaviors>
+                            <behaviors:EventToCommandBehavior EventName="TextChanged" Command="{Binding ValidateAddressLineCommand}"/>
+                        </Entry.Behaviors>
+                        <Entry.Triggers>
+                            <DataTrigger TargetType="Entry"
+							Binding="{Binding Employee.AddressLine.IsValid}"
+							Value="False">
+                                <Setter Property="behaviors:LineColorBehavior.LineColor" 
+                                    Value="{StaticResource ErrorColor}"/>
+                            </DataTrigger>
+                        </Entry.Triggers>
+                    </Entry>
+                    <Label
+					Text="{Binding Employee.AddressLine.Errors, Converter={StaticResource FirstValidationErrorConverter}"
+					Style="{StaticResource ValidationErrorLabelStyle}" />
+                </StackLayout>
+            </Frame>
+            <Frame Padding="10,10,10,10">
+                <StackLayout Spacing="2">
+                    <Label Text="City" 
+                           FontSize="Small"
+                           VerticalTextAlignment="End"/>
+                    <Entry Text="{Binding Employee.City.Value, Mode=TwoWay}" 
+                       Style="{StaticResource EntryStyle}" Placeholder="Enter City" 
+                       PlaceholderColor="#757575">
+                        <Entry.Behaviors>
+                            <behaviors:EventToCommandBehavior EventName="TextChanged" Command="{Binding ValidateCityCommand}"/>
+                        </Entry.Behaviors>
+                        <Entry.Triggers>
+                            <DataTrigger TargetType="Entry"
+							Binding="{Binding Employee.City.IsValid}"
+							Value="False">
+                                <Setter Property="behaviors:LineColorBehavior.LineColor" 
+                                    Value="{StaticResource ErrorColor}"/>
+                            </DataTrigger>
+                        </Entry.Triggers>
+                    </Entry>
+                    <Label
+					Text="{Binding Employee.City.Errors, Converter={StaticResource FirstValidationErrorConverter}"
+					Style="{StaticResource ValidationErrorLabelStyle}" />
+                </StackLayout>
+            </Frame>
+            <Frame Padding="10,10,10,10">
+                <StackLayout Spacing="2">
+                    <Label Text="Country" 
+                           FontSize="Small"
+                           VerticalTextAlignment="End"/>
+                    <Entry Text="{Binding Employee.Country.Value, Mode=TwoWay}" 
+                       Style="{StaticResource EntryStyle}" Placeholder="Enter Country" 
+                       PlaceholderColor="#757575">
+                        <Entry.Behaviors>
+                            <behaviors:EventToCommandBehavior EventName="TextChanged" Command="{Binding ValidateCountryCommand}"/>
+                        </Entry.Behaviors>
+                        <Entry.Triggers>
+                            <DataTrigger TargetType="Entry"
+							Binding="{Binding Employee.Country.IsValid}"
+							Value="False">
+                                <Setter Property="behaviors:LineColorBehavior.LineColor" 
+                                    Value="{StaticResource ErrorColor}"/>
+                            </DataTrigger>
+                        </Entry.Triggers>
+                    </Entry>
+                    <Label
+					Text="{Binding Employee.Country.Errors, Converter={StaticResource FirstValidationErrorConverter}"
+					Style="{StaticResource ValidationErrorLabelStyle}" />
+                </StackLayout>
+            </Frame>
+            <Frame Padding="10,10,10,10">
+                <StackLayout Spacing="2">
+                    <Label Text="ZipCode" 
+                           FontSize="Small"
+                           VerticalTextAlignment="End"/>
+                    <Entry Text="{Binding Employee.ZipCode.Value, Mode=TwoWay}" 
+                       Style="{StaticResource EntryStyle}" Placeholder="Enter ZipCode" 
+                       PlaceholderColor="#757575"/>
+                    <Label
+					Text=""/>
+                </StackLayout>
+            </Frame>
+            <Frame Padding="10,10,10,10">
+                <StackLayout Spacing="2">
+                    <Label Text="Phone Number" 
+                           FontSize="Small"
+                           VerticalTextAlignment="End"/>
+                    <Entry Text="{Binding Employee.PhoneNumber.Value, Mode=TwoWay}" 
+                       Style="{StaticResource EntryStyle}" Placeholder="Enter PhoneNumber" 
+                       PlaceholderColor="#757575"/>
+                    <Label Text=""/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

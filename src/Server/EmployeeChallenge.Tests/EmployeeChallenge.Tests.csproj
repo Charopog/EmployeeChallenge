@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Moq" Version="4.8.1" />
+    <PackageReference Include="xunit" Version="2.3.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EmployeeChallenge.Common\EmployeeChallenge.Common.csproj" />
+    <ProjectReference Include="..\EmployeeChallenge.Data\EmployeeChallenge.Data.csproj" />
+    <ProjectReference Include="..\EmployeeChallenge.Dtos\EmployeeChallenge.Dtos.csproj" />
+    <ProjectReference Include="..\EmployeeChallenge.Entities\EmployeeChallenge.Entities.csproj" />
+    <ProjectReference Include="..\EmployeeChallenge.Services\EmployeeChallenge.Services.csproj" />
+  </ItemGroup>
+
+</Project>

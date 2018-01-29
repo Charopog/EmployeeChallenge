@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:fe="clr-namespace:FreshEssentials;assembly=FreshEssentials"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="EmployeeChallenge.Xam.Views.EmployeesPage"
+             BackgroundColor = "#F5F5F5"
+             Title="{Binding Title}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Default" Priority="0" Text="Add" Command="{Binding NavigateToAddEmployeeCommand}"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="EmployeeDataTemplate">
+                <ViewCell>
+                    <StackLayout Padding="10,5,10,5">
+                        <Frame Padding="20,12,20,12" CornerRadius="10" >
+                            <StackLayout>
+                                <Label Text="{Binding Fullname}" FontAttributes="Bold" FontSize="Medium"/>
+                                <Label Text="{Binding Email}" FontSize="Small"/>
+                                <Label Text="{Binding LocationInfo}" FontSize="Small"/>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <ListView x:Name="EmployeeListView" 
+                  IsPullToRefreshEnabled="True"
+                  RefreshCommand="{Binding RefreshEmployeesCommand}"
+                  IsRefreshing="{Binding IsRefreshing,Mode=TwoWay}"
+                  SeparatorVisibility="None" 
+                  VerticalOptions="FillAndExpand" 
+                  HorizontalOptions="FillAndExpand"
+                  HasUnevenRows="True"
+                  ItemTapped="EmployeeList_OnItemTapped"
+                  ItemSelected="EmployeeList_OnItemSelected"
+                  ItemsSource="{Binding Employees}"
+                  ItemTemplate="{StaticResource EmployeeDataTemplate}"/>
+    </StackLayout>
+</ContentPage>

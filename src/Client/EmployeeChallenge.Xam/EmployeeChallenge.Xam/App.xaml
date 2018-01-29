@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms"
+             xmlns:behaviors="clr-namespace:EmployeeChallenge.Xam.UI.Behaviors;assembly=EmployeeChallenge.Xam"
+             xmlns:converters="clr-namespace:EmployeeChallenge.Xam.UI.Converters;assembly=EmployeeChallenge.Xam"
+             x:Class="EmployeeChallenge.Xam.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!--COLORS-->
+            <Color x:Key="WhiteColor">#ffffff</Color>
+            <Color x:Key="BlackColor">#000000</Color>
+            <Color x:Key="BackgroundColor">#F4F6FA</Color>
+            <Color x:Key="AccentColor">#00857D</Color>
+            <Color x:Key="LightGreenColor">#83D01B</Color>
+            <Color x:Key="GreenColor">#00A69C</Color>
+            <Color x:Key="DarkGreenColor">#00857D</Color>
+            <Color x:Key="GrayColor">#e2e2e2</Color>
+            <Color x:Key="ErrorColor">#ff5252</Color>
+
+            <!--FONT SIZES-->
+            <OnPlatform 
+                x:Key="LittleSize"
+                x:TypeArguments="x:Double"
+                iOS="11"
+                Android="12"
+                WinPhone="12"/>
+
+            <OnPlatform 
+                x:Key="MidMediumSize"
+                x:TypeArguments="x:Double"
+                iOS="12"
+                Android="14"
+                WinPhone="14"/>
+
+            <OnPlatform 
+                x:Key="MediumSize"
+                x:TypeArguments="x:Double"
+                iOS="14"
+                Android="16"
+                WinPhone="16"/>
+
+            <OnPlatform 
+                x:Key="LargeSize"
+                x:TypeArguments="x:Double"
+                iOS="16"
+                Android="18"
+                WinPhone="18"/>
+
+            <OnPlatform 
+                x:Key="LargerSize"
+                x:TypeArguments="x:Double"
+                iOS="18"
+                Android="20"
+                WinPhone="20"/>
+
+            <OnPlatform 
+                x:Key="BigSize"
+                x:TypeArguments="x:Double"
+                iOS="20"
+                Android="24"
+                WinPhone="24"/>
+
+            <OnPlatform 
+                x:Key="ExtraBigSize"
+                x:TypeArguments="x:Double"
+                iOS="24"
+                Android="32"
+                WinPhone="32"/>
+
+            <OnPlatform 
+                x:Key="HugeSize"
+                x:TypeArguments="x:Double"
+                iOS="32"
+                Android="48"
+                WinPhone="48"/>
+
+            <!--Entrys-->
+            <Style x:Key="EntryStyle" TargetType="{x:Type Entry}">
+                <Setter Property="TextColor"  Value="{StaticResource BlackColor}" />
+                <Setter Property="PlaceholderColor" Value="{StaticResource BlackColor}" />
+                <Setter Property="FontSize" Value="{StaticResource LargeSize}" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="Opacity" Value="0.6" />
+                <Setter Property="behaviors:LineColorBehavior.ApplyLineColor" Value="True" />
+                <Setter Property="behaviors:LineColorBehavior.LineColor" Value="{StaticResource BlackColor}" />
+                <Style.Triggers>
+                    <Trigger TargetType="Entry"
+                             Property="IsFocused" 
+                             Value="True">
+                        <Setter Property="Opacity" Value="1" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+
+            <!--Validation Error Label-->
+            <Style x:Key="ValidationErrorLabelStyle"
+				   TargetType="{x:Type Label}">
+                <Setter Property="TextColor"
+						   Value="{StaticResource ErrorColor}" />
+                <Setter Property="FontSize"
+					       Value="{StaticResource LittleSize}" />
+            </Style>
+            
+            <!-- CONVERTERS -->
+            <converters:FirstValidationErrorConverter x:Key="FirstValidationErrorConverter" />
+            
+        </ResourceDictionary>
+    </Application.Resources>
+</prism:PrismApplication>

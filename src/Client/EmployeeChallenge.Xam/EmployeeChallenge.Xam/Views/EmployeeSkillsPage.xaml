@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="EmployeeChallenge.Xam.Views.EmployeeSkillsPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Default" Priority="0" Text="Add" Command="{Binding OpenAddSkillActionSheetCommand}"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="EmployeeSkillsDataTemplate">
+                <ViewCell>
+                    <StackLayout Padding="10,5,10,5">
+                        <Frame Padding="20,12,20,12" CornerRadius="10">
+                            <StackLayout>
+                                <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="Medium"/>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <ListView x:Name="EmployeeSkillsListView" 
+                  IsPullToRefreshEnabled="True"
+                  RefreshCommand="{Binding RefreshSkillsCommand}"
+                  IsRefreshing="{Binding IsRefreshing,Mode=TwoWay}"
+                  SeparatorVisibility="None" 
+                  VerticalOptions="FillAndExpand" 
+                  HorizontalOptions="FillAndExpand"
+                  HasUnevenRows="True"
+                  ItemTapped="EmployeeSkillsList_OnItemTapped"
+                  ItemSelected="EmployeeSkillsList_OnItemSelected"
+                  ItemsSource="{Binding EmployeeSkills}"
+                  ItemTemplate="{StaticResource EmployeeSkillsDataTemplate}"/>
+    </StackLayout>
+</ContentPage>

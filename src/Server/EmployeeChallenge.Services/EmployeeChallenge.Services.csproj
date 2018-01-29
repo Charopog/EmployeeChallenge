@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="6.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EmployeeChallenge.Common\EmployeeChallenge.Common.csproj" />
+    <ProjectReference Include="..\EmployeeChallenge.Data\EmployeeChallenge.Data.csproj" />
+    <ProjectReference Include="..\EmployeeChallenge.Dtos\EmployeeChallenge.Dtos.csproj" />
+    <ProjectReference Include="..\EmployeeChallenge.Entities\EmployeeChallenge.Entities.csproj" />
+  </ItemGroup>
+
+</Project>
