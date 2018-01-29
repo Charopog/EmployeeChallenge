@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeChallenge.Xam", "EmployeeChallenge.Xam\EmployeeChallenge.Xam\EmployeeChallenge.Xam.csproj", "{D2F609DD-2A59-4C9A-AC7F-484097DB9EB3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeChallenge.Xam", "EmployeeChallenge.Xam\EmployeeChallenge.Xam\EmployeeChallenge.Xam.csproj", "{D2F609DD-2A59-4C9A-AC7F-484097DB9EB3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeChallenge.Xam.Android", "EmployeeChallenge.Xam\EmployeeChallenge.Xam.Android\EmployeeChallenge.Xam.Android.csproj", "{0C1C2A73-2A3A-4459-BC36-65BEA5A86725}"
 EndProject
