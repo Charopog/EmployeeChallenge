@@ -1,11 +1,11 @@
 # EmployeeChallenge
 
-Sample Project for creating Web Api with Asp .Net Core and Entity Framework Core- Code First
+Sample Project for creating Web Api with Asp .Net Core and Entity Framework Core Code First
 and a Xamarin Forms client that consumes it.
 
 ## Getting Started
 
-** Server **
+### Server
 
 * Open EmployeeChallenge solution inside src/server folder in Visual Studio Build it.
 * Select EmployeeChallenge.API as Startup Project and run it as Standard not on IIS.
@@ -13,7 +13,7 @@ and a Xamarin Forms client that consumes it.
 * Web api is configured to listen all incoming connections on port 60000
 * You can use swagger to test the api by visiting http://(your local IP Address):60000/swagger/
 
-** Client **
+### Client
 * Open EmployeeChallenge.Xam solution inside src/client folder in Visual Studio.
 * Install EmployeeChallenge.Dtos.1.0.0.nupkg from Nuget folder to EmployeeChallenge.Xam Project
 * Build (For iOS you need to connect with Xamarin Mac Agent)
