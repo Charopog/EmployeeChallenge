@@ -4,7 +4,6 @@ namespace EmployeeChallenge.Services.Mappings
     using AutoMapper;
     using EmployeeChallenge.Dtos;
     using EmployeeChallenge.Entities;
-    using System.Linq;
 
     public class EmployeeChallengeMappingProfile : Profile
     {
@@ -21,7 +20,6 @@ namespace EmployeeChallenge.Services.Mappings
                     map => map.MapFrom(e => e.Address.ZipCode)).ReverseMap();
 
             CreateMap<Skill, SkillDto>().ReverseMap();
-
         }
     }
 }
