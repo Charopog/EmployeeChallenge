@@ -9,7 +9,7 @@ and a Xamarin Forms client that consumes it.
 
 * Open EmployeeChallenge solution inside src/server folder in Visual Studio Build it.
 * Select EmployeeChallenge.API as Startup Project and run it as Standard not on IIS.
-* On first run server will create a new database in VS Local Db and fill with dummy data
+* On first run server will create a new database in VS Local Db and fill it with dummy data
 * Web api is configured to listen all incoming connections on port 60000
 * You can use swagger to test the api by visiting http://(your local IP Address):60000/swagger/
 
